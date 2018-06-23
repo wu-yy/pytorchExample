@@ -40,6 +40,9 @@ for epoch in range(5000):
     out=logistic_model(x)
     loss=criterion(out,y)
     print_loss=loss.data[0]
+
+    print("data[0]",loss.data[0])
+    print("item:",loss.item())
     mask=out.ge(0.5).float() #输出大于0.5 就是1 ，小于0.5 就是0
 
     correct=(mask==y).sum()
